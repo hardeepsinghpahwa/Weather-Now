@@ -1,0 +1,14 @@
+package com.example.weatherbook.io.remote
+
+import com.example.weatherbook.model.WeatherData
+import retrofit2.Response
+import retrofit2.http.GET
+import retrofit2.http.Url
+
+interface ApiService {
+
+    @GET
+    suspend fun getCurrentWeather(
+        @Url url: String
+    ): Response<WeatherData>
+}
