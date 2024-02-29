@@ -56,6 +56,7 @@ class DailyAdapter @Inject constructor() : RecyclerView.Adapter<DailyAdapter.Lis
 
             with(dailyCodes[position]) {
                 binding.icon.setImageDrawable(getIcon(this, binding.icon.context))
+                binding.code.text=getWeatherName(this)
             }
 
             with(dailyLowTemps[position]) {
@@ -129,5 +130,106 @@ class DailyAdapter @Inject constructor() : RecyclerView.Adapter<DailyAdapter.Lis
 
         }
     }
+
+    private fun getWeatherName(code: Int): String {
+        return when (code) {
+
+            //clear
+            0 -> {
+                "Clear"
+            }
+
+            //Partly cloudy
+            1 -> {
+                "Mainly clear"
+            }
+
+            2 -> {
+                "Partly Cloudy"
+            }
+
+
+            3 -> {
+                "Overcast"
+            }
+
+
+            //Fog
+            45, 48 -> {
+                "Fog"
+            }
+
+            //Drizzle
+            51, 56 -> {
+                "Light Drizzle"
+            }
+
+            53 -> {
+                "Moderate Drizzle"
+            }
+
+
+            55, 57 -> {
+                "Dense Drizzle"
+            }
+
+
+            //Rain
+            61, 66 -> {
+                "Light Rain"
+            }
+
+            63 -> {
+                "Moderate Rain"
+            }
+
+
+            65, 67 -> {
+                "Heavy Rain"
+            }
+
+
+            //Snow
+            71 -> {
+                "Slight Snowfall"
+            }
+
+            73 -> {
+                "Moderate Snowfall"
+            }
+
+
+            75 -> {
+                "Heavy Snowfall"
+            }
+
+            77 -> {
+                "Snow grains"
+            }
+
+            85, 86 -> {
+                "Snow Showers"
+            }
+
+            80, 81, 82 -> {
+                "Rain Showers"
+            }
+
+            //Thunderstorm
+            95 -> {
+                "ThunderStorm"
+            }
+
+            96, 99 -> {
+                "Hail ThunderStorm"
+            }
+
+            else -> {
+                "Clear"
+            }
+
+        }
+    }
+
 
 }

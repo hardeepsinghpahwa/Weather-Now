@@ -21,6 +21,8 @@ class HomeViewModel(private val repository: HomeRepository) : ViewModel() {
     val hourlyTimes = MutableLiveData<ArrayList<String>>()
     val dailyTimes = MutableLiveData<ArrayList<String>>()
 
+    val updatedTime = ObservableField("")
+    val placeName = ObservableField("")
     val temp = ObservableField("")
     val codeText = MutableLiveData<Int>()
     val wind = ObservableField("")
@@ -29,18 +31,17 @@ class HomeViewModel(private val repository: HomeRepository) : ViewModel() {
 
     //var hourlyData
 
-    fun getCurrentWeather() {
+    fun getCurrentWeather(lat:String,lon:String) {
         loader.set(true)
-        loader.set(false)
+        retry.set(false)
 
 
         viewModelScope.launch(Dispatchers.IO) {
 
             try {
-                val response = repository.getCurrentWeather("", "")
+                val response = repository.getCurrentWeather(lat, lon)
 
                 if (response.code() == 200) {
-                    loader.set(false)
 
                     val data = response.body()
 
@@ -65,8 +66,9 @@ class HomeViewModel(private val repository: HomeRepository) : ViewModel() {
                         dailyLowTemps.postValue(data.daily.temperatureMMin!!)
                         dailyCodes.postValue(data.daily.weatherCode!!)
 
-                        codeText.postValue(data.current.weatherCode!!)
+                        codeText.postValue(data.current.weatherCode)
 
+                        //loader.set(false)
                     }
 
                 } else {

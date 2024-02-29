@@ -38,7 +38,13 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:gravity="center"
-                    android:text="6:00 pm"
+                    android:textColor="@color/white" />
+
+                <TextView
+                    android:id="@+id/code"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
                     android:textColor="@color/white" />
 
                 <ImageView
@@ -50,13 +56,15 @@
 
                 <LinearLayout
                     android:layout_width="wrap_content"
-                    android:layout_height="wrap_content">
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:orientation="horizontal"
+                    android:gravity="center">
 
                     <TextView
                         android:id="@+id/highTemp"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_marginTop="10dp"
                         android:drawableEnd="@drawable/ic_arrow_up"
                         android:drawablePadding="0dp"
                         android:drawableTint="@color/white"
@@ -70,7 +78,6 @@
                         android:id="@+id/lowTemp"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_marginTop="10dp"
                         android:drawableEnd="@drawable/ic_arrow_down"
                         android:drawablePadding="0dp"
                         android:gravity="center"

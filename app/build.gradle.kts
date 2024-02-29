@@ -55,9 +55,11 @@ dependencies {
     implementation("com.squareup.okhttp3:logging-interceptor:3.5.0")
     implementation("org.jetbrains.kotlinx:kotlinx-coroutines-android:1.7.3")
     implementation("androidx.lifecycle:lifecycle-viewmodel-ktx:2.7.0")
+    implementation("androidx.swiperefreshlayout:swiperefreshlayout:1.2.0-alpha01")
 
 
     implementation("com.google.dagger:hilt-android:2.50")
+    implementation("com.google.android.libraries.places:places:3.3.0")
     kapt("com.google.dagger:hilt-compiler:2.50")
 
 
