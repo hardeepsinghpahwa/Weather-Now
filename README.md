@@ -1,7 +1,7 @@
 
-![Logo](https://firebasestorage.googleapis.com/v0/b/tastyrecipeapp.appspot.com/o/aaaaa.png?alt=media&token=68031f6b-f809-414a-82ea-9fe6971d9ae1)
 
-<img src="[https://your-image-url.type](https://firebasestorage.googleapis.com/v0/b/tastyrecipeapp.appspot.com/o/aaaaa.png?alt=media&token=68031f6b-f809-414a-82ea-9fe6971d9ae1)">
+<img src="https://firebasestorage.googleapis.com/v0/b/tastyrecipeapp.appspot.com/o/aaaaa.png?alt=media&token=68031f6b-f809-414a-82ea-9fe6971d9ae1" width="300">
+
 
 # Weather Now
 
@@ -37,9 +37,9 @@ architecture and android best practices.
 
 ## Screenshots
 
-![App Screenshot](https://firebasestorage.googleapis.com/v0/b/tastyrecipeapp.appspot.com/o/1000000153.jpg?alt=media&token=aba317bc-d315-4915-881d-aa99468164aa)
+<img src="https://firebasestorage.googleapis.com/v0/b/tastyrecipeapp.appspot.com/o/1000000153.jpg?alt=media&token=aba317bc-d315-4915-881d-aa99468164aa" width="300">
 
-![App Screenshot](https://firebasestorage.googleapis.com/v0/b/tastyrecipeapp.appspot.com/o/1000000154.jpg?alt=media&token=4d714197-5b08-4125-ba91-3faf1afed76c)
+<img src="https://firebasestorage.googleapis.com/v0/b/tastyrecipeapp.appspot.com/o/1000000154.jpg?alt=media&token=4d714197-5b08-4125-ba91-3faf1afed76c" width="300">
 
 
 ## 🚀 About Me
