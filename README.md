@@ -1,6 +1,7 @@
 
 ![Logo](https://firebasestorage.googleapis.com/v0/b/tastyrecipeapp.appspot.com/o/aaaaa.png?alt=media&token=68031f6b-f809-414a-82ea-9fe6971d9ae1)
 
+<img src="[https://your-image-url.type](https://firebasestorage.googleapis.com/v0/b/tastyrecipeapp.appspot.com/o/aaaaa.png?alt=media&token=68031f6b-f809-414a-82ea-9fe6971d9ae1)" width="100" height="100">
 
 # Weather Now
 
