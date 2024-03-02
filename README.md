@@ -31,7 +31,7 @@ architecture and android best practices.
 
 ## Tech Stack
 
-**Frameworks:** Android, Hilt, Kotlin courotines,Data binding, View binding
+**Frameworks and Libraries:** Android, Hilt, Kotlin courotines,Data binding, View binding, Retrofit
 
 
 
