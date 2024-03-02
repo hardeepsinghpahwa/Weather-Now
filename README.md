@@ -1,5 +1,5 @@
 
-![Logo](https://firebasestorage.googleapis.com/v0/b/tastyrecipeapp.appspot.com/o/aaaaa.png?alt=media&token=68031f6b-f809-414a-82ea-9fe6971d9ae1 =250x250)
+![Logo](https://firebasestorage.googleapis.com/v0/b/tastyrecipeapp.appspot.com/o/aaaaa.png?alt=media&token=68031f6b-f809-414a-82ea-9fe6971d9ae1)
 
 
 # Weather Now
