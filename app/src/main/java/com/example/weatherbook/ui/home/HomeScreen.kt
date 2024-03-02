@@ -71,7 +71,7 @@ class HomeScreen : AppCompatActivity() {
         getUpdatedTime()
         checkLocationPermission()
 
-        binding.hourlyData.layoutManager = LinearLayoutManager(this, RecyclerView.HORIZONTAL, false)
+        binding.hourlyData.layoutManager = LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, false)
         binding.hourlyData.adapter = hourlyAdapter
 
         binding.dailyData.layoutManager = LinearLayoutManager(this, RecyclerView.HORIZONTAL, false)

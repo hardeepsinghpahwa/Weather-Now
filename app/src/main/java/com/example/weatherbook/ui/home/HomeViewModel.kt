@@ -31,7 +31,7 @@ class HomeViewModel(private val repository: HomeRepository) : ViewModel() {
 
     //var hourlyData
 
-    fun getCurrentWeather(lat:String,lon:String) {
+    fun getCurrentWeather(lat: String, lon: String) {
         loader.set(true)
         retry.set(false)
 
