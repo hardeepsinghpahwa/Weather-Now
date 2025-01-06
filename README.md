@@ -1,6 +1,6 @@
 
 
-<img src="https://firebasestorage.googleapis.com/v0/b/tastyrecipeapp.appspot.com/o/weather%20now.png?alt=media&token=8272e714-df57-47af-9ef4-46ffa16118b5" width="300">
+<img src="https://firebasestorage.googleapis.com/v0/b/tastyrecipeapp.appspot.com/o/weather%20now.jpg?alt=media&token=10c80b6e-4138-4d97-b1ef-31d74602267e" width="300">
 
 
 # Weather Now
