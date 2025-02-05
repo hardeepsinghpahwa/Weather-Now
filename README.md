@@ -43,5 +43,5 @@ architecture and android best practices.
 
 
 ## 🚀 About Me
-I'm a mobile developer learning new things and searching for freelance work oppurtunities.
+I'm a mobile developer learning new things and searching for freelance work opportunities.
 
