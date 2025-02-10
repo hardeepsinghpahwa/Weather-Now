@@ -1,6 +1,7 @@
 package com.example.weatherbook.ui.home
 
 import android.Manifest
+import android.annotation.SuppressLint
 import android.content.pm.PackageManager
 import android.location.Geocoder
 import android.location.Location
@@ -16,6 +17,7 @@ import androidx.core.app.ActivityCompat
 import androidx.core.content.ContextCompat
 import androidx.core.content.edit
 import androidx.databinding.DataBindingUtil
+import androidx.lifecycle.lifecycleScope
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.airbnb.lottie.LottieAnimationView
@@ -27,6 +29,8 @@ import com.example.weatherbook.ui.home.adapters.HourlyAdapter
 import com.google.android.gms.location.FusedLocationProviderClient
 import com.google.android.gms.location.LocationServices
 import dagger.hilt.android.AndroidEntryPoint
+import kotlinx.coroutines.delay
+import kotlinx.coroutines.launch
 import java.io.IOException
 import java.util.Calendar
 import java.util.Locale
@@ -56,11 +60,10 @@ class HomeScreen : AppCompatActivity() {
     private lateinit var fusedLocationClient: FusedLocationProviderClient
 
 
-    var latitudeSet = ""
-    var longitudeSet = ""
+    private var latitudeSet = ""
+    private var longitudeSet = ""
 
     override fun onCreate(savedInstanceState: Bundle?) {
-        enableEdgeToEdge()
         super.onCreate(savedInstanceState)
 
         initDataBinding()
@@ -71,7 +74,8 @@ class HomeScreen : AppCompatActivity() {
         getUpdatedTime()
         checkLocationPermission()
 
-        binding.hourlyData.layoutManager = LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, false)
+        binding.hourlyData.layoutManager =
+            LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, false)
         binding.hourlyData.adapter = hourlyAdapter
 
         binding.dailyData.layoutManager = LinearLayoutManager(this, RecyclerView.HORIZONTAL, false)
@@ -101,8 +105,8 @@ class HomeScreen : AppCompatActivity() {
 
         binding.swiperefresh.setOnRefreshListener {
             setUpdatedTime()
-            if(latitudeSet.isNotEmpty()) {
-                viewModel.getCurrentWeather(latitudeSet,longitudeSet)
+            if (latitudeSet.isNotEmpty()) {
+                viewModel.getCurrentWeather(latitudeSet, longitudeSet)
             }
         }
 
@@ -138,6 +142,7 @@ class HomeScreen : AppCompatActivity() {
         binding.executePendingBindings()
     }
 
+    @SuppressLint("SetTextI18n")
     private fun setDetails(code: Int, text: TextView, view: LottieAnimationView) {
         when (code) {
 
@@ -280,6 +285,11 @@ class HomeScreen : AppCompatActivity() {
         pref.edit {
             this.putLong("updated_time", Calendar.getInstance().time.time)
         }
+
+        lifecycleScope.launch {
+            delay(2000L)
+            getUpdatedTime()
+        }
     }
 
     private fun checkLocationPermission() {
@@ -383,7 +393,11 @@ class HomeScreen : AppCompatActivity() {
             } else if (elapsedHours > 0) {
                 viewModel.updatedTime.set("Updated $elapsedHours hours ago")
             } else if (elapsedMinutes > 0) {
-                viewModel.updatedTime.set("Updated $elapsedMinutes minutes ago")
+                if (elapsedMinutes.toInt() == 1) {
+                    viewModel.updatedTime.set("Updated $elapsedMinutes minute ago")
+                } else {
+                    viewModel.updatedTime.set("Updated $elapsedMinutes minutes ago")
+                }
             } else if (elapsedSeconds > 0) {
                 viewModel.updatedTime.set("Updated $elapsedSeconds seconds ago")
             }
@@ -393,6 +407,7 @@ class HomeScreen : AppCompatActivity() {
     private fun getLocationName(latitude: Double, longitude: Double): String {
         latitudeSet = latitude.toString()
         longitudeSet = longitude.toString()
+
         setUpdatedTime()
         viewModel.getCurrentWeather(latitude.toString(), longitude.toString())
         val geocoder = Geocoder(this, Locale.getDefault());
